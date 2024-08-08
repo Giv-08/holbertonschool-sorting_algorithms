@@ -20,14 +20,14 @@ void swap(int *x, int *y)
  * @array: an array given
  * @low: low int
  * @high: high int
- * Return: int
+ * Return: inti
  */
 int partition(int array[], int low, int high)
 {
 	int pivot = array[high];
 	int i = low - 1, j = low;
 
-	while (i <= high - 1)
+	while (j <= high - 1)
 	{
 		if (array[j] < pivot)
 		{
@@ -63,6 +63,8 @@ void quicksort_rec(int array[], int low, int high)
  */
 void quick_sort(int *array, size_t size)
 {
+	if (size == 0)
+		return;
 	quicksort_rec(array, 0, size - 1);
 	print_array(array, size);
 }
