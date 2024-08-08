@@ -26,9 +26,9 @@ void swap(int *x, int *y)
 int lomuto_partition(int *array, size_t size, int low, int high)
 {
 	int pivot = array[high];
-	int i = low - 1, j = low;
+	int i = low, j = low;
 
-	while (j <= high - 1)
+	while (j < high)
 	{
 		if (array[j] <= pivot)
 		{
