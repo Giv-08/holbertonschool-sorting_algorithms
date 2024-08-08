@@ -19,7 +19,7 @@ void swap(int *array, size_t i, size_t j)
 }
 
 /**
- * selection_sort - Sorts an array of integers in ascending order using Selection sort
+ * selection_sort - Sorts an array of integers in ascending order
  *
  * @array: The array to sort
  * @size: The size of the array
