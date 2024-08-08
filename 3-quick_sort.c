@@ -27,14 +27,13 @@ int partition(int array[], int low, int high)
 	int pivot = array[high];
 	int i = low - 1, j = low;
 
-	while (j <= high - 1)
+	for (j = low; j <= high - 1; j++)
 	{
 		if (array[j] < pivot)
 		{
 			i++;
 			swap(&array[i], &array[j]);
 		}
-		j++;
 	}
 	swap(&array[i + 1], &array[high]);
 	return (i + 1);
@@ -52,6 +51,7 @@ void quicksort_rec(int array[], int low, int high)
 	if (low < high)
 	{
 		pivot_idx = partition(array, low, high);
+		print_array(array, high - low + 1);
 		quicksort_rec(array, low, pivot_idx - 1);
 		quicksort_rec(array, pivot_idx + 1, high);
 	}
