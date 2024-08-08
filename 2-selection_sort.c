@@ -22,7 +22,7 @@ void swap(int *array, size_t i, size_t j)
 /**
  * selection_sort - Sorts an array of integers in ascending order
  *
- * @array: The array to sort
+ * @array: The array to sort by
  * @size: The size of the array
  *
  */
