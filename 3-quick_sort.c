@@ -3,13 +3,13 @@
 
 /**
  * swap - Swaps two integers in an array.
- * @array: The array of integers.
  * @x: The index of the first integer.
  * @y: The index of the second integer.
  */
 void swap(int *x, int *y)
 {
 	int temp;
+
 	temp = *x;
 	*x = *y;
 	*y = temp;
@@ -27,14 +27,16 @@ int lomuto_partition(int *array, size_t size, int low, int high)
 {
 	int pivot = array[high];
 	int i = low - 1;
+	int j = low;
 
-	for (int j = low; j < high; j++)
+	while (j < high)
 	{
 		if (array[j] <= pivot)
 		{
 			i++;
 			swap(array + i, array + j);
 		}
+		j++;
 	}
 	swap(array + i + 1, array + high);
 	print_array(array, size);
@@ -46,8 +48,9 @@ int lomuto_partition(int *array, size_t size, int low, int high)
  * @array: The array of integers.
  * @low: The starting index of the partition.
  * @high: The ending index of the partition.
+ * @size: size of array.
  */
-void quick_sort_recursive(int *array, size_t size,int low, int high)
+void quick_sort_recursive(int *array, size_t size, int low, int high)
 {
 	int pivot;
 
@@ -55,7 +58,7 @@ void quick_sort_recursive(int *array, size_t size,int low, int high)
 	{
 		pivot = lomuto_partition(array, size, low, high);
 		quick_sort_recursive(array, size, low, pivot - 1);
- 		quick_sort_recursive(array, size, pivot + 1, high);
+		quick_sort_recursive(array, size, pivot + 1, high);
 	}
 }
 
