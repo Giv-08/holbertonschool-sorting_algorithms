@@ -19,7 +19,7 @@ node2->next = *node1;
 if ((*node1)->prev != NULL)
 (*node1)->prev->next = node2;
 else
-*h = node2;
+*head = node2;
 (*node1)->prev = node2;
 *node1 = node2->prev;
 }
